@@ -59,5 +59,5 @@ Then enter the PEM passphrase.
 ## Usage
 Enter the directory the AO2D file is stored, then execute the analysis command:
 ```bash
-o2-analysis-
+o2-analysis-<analysis-task> --aod-file <aod-filename>.root
 ```
