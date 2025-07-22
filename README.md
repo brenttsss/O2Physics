@@ -57,7 +57,7 @@ alien-token-init bsuriah
 ```
 Then enter the PEM passphrase.
 ## Usage
-Enter the directory the AO2D file is stored, then execute the analysis command:
+Enter the directory the AO2D file is stored, then execute the analysis task using the command:
 ```bash
 o2-analysis-<analysis-task> --aod-file <aod-filename>.root
 ```
