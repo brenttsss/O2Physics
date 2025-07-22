@@ -56,6 +56,13 @@ Initialise the session by getting a valid token:
 alien-token-init bsuriah
 ```
 Then enter the PEM passphrase.
+### Troubleshooting while building
+If any errors are encountered during the building, perform the following commands:
+```bash
+git add .
+git commit -m "<commit message>"
+git pull --rebase
+```
 ## Usage
 Enter the directory the AO2D file is stored, then execute the analysis task using the command:
 ```bash
