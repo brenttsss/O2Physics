@@ -67,6 +67,10 @@ Enter the directory the AO2D file is stored, then execute the analysis task usin
 ```bash
 o2-analysis-<analysis-task> --aod-file <aod-filename>.root
 ```
+To run an analysis on batch AO2D files, use the command:
+```bash
+o2-analysis-<analysis-task> --aod-file @aodfiles.txt
+```
 Once completed, exit the environment using:
 ```bash
 exit
