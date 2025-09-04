@@ -1,12 +1,12 @@
 # O2Physics
 
-This repository contains the code and instructions for running ALICE O2Physics.
+This repository contains the code and instructions for running ALICE O2Physics and project related stuff.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Analysis Task](#analysis-task)
+- [Python](#python)
 - [Contact](#contact)
 
 ## Installation
@@ -76,48 +76,9 @@ Once completed, exit the environment using:
 exit
 ```
 
-## Analysis Task
-### Recommended features for muon ML classifier
-#### Kinematic variables
-These help distinguish soft pions/kaons from harder heavy-flavor muons.
-| Feature                       | Description                     | Why it’s useful                             |
-| ----------------------------- | ------------------------------- | ------------------------------------------- |
-| `pt`                          | Transverse momentum (GeV/c)     | HF muons tend to have harder spectra        |
-| `eta`, `phi`                  | Pseudorapidity, azimuthal angle | For acceptance and angular separation       |
-| `p`                           | Total momentum                  | Additional separation info                  |
-| `mass` (if from 2-track reco) | Invariant mass                  | May help in pair classification (e.g., J/ψ) |
-
-#### Track quality variables
-Discriminates between well-reconstructed HF muons and spurious tracks.
-| Feature            | Description                     |
-| ------------------ | ------------------------------- |
-| `nClusters`        | Number of clusters in detectors |
-| `chi2`, `chi2/NDF` | Fit quality                     |
-| `chi2MatchMCHMID`  | MCH–MID matching quality        |
-| `chi2MatchMCHMFT`  | MCH–MFT matching quality        |
-| `pDCA`             | Distance of closest approach    |
-
-#### Mother particle variables
-| Feature          | Description                                 | Why it’s useful                            |
-| ---------------- | ------------------------------------------- | ------------------------------------------ |
-| `motherPDG`      | Absolute PDG code of the muon's mother      | Key for defining origin (π, K, D, B, etc.) |
-| `motherCategory` | Categorical group (π/K, D, B, Boson, Other) | Simplifies interpretation and model input  |
-| `isPrompt`       | Boolean (1 if prompt HF decay, 0 if not)    | Differentiates direct vs. cascade decays   |
-
-
-#### Decay-topology/geometry (if available)
-Distinguishing non-prompt muons from charm/bottom decays.
-| Feature             | Description                             |
-| ------------------- | --------------------------------------- |
-| `DCA significance`  | DCA divided by uncertainty              |
-| `z-vertex distance` | Between primary vertex and decay vertex |
-| `pointing angle`    | Between muon momentum and decay vector  |
-| `impact parameter`  | Transverse distance from primary vertex |
-
-#### Particle ID (PID) variables
-| Feature                        | Description                            |
-| ------------------------------ | -------------------------------------- |
-| MCH/MID cluster match count    | Number of matching clusters            |
-| PID score or likelihood ratios | From PID detectors or likelihood model |
-| Energy deposition              | If available in detector subsystems    |
-| Matching quality               | To MCH, MID, or MFT layers             |
+## Python
+### Creating a virtual environment
+To create a virtual environment within the directory of a folder, enter the command:
+```bash
+python3 -m venv .venv
+```
